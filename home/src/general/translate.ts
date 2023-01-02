@@ -7,7 +7,7 @@ export const initTranslate = (
       translation: {
         "Show Rick And Morty characters":
           "Mostrar personajes de Rick and Morty",
-        "Show Harry Potter Characters": "Mostrar personajes de Harry Potter",
+        "Show Harry Potter characters": "Mostrar personajes de Harry Potter",
         "Select languaje:": "Seleccioner idioma",
         Spanish: "Español",
         English: "Inglés",
