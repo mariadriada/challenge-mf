@@ -1,14 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Global, css } from "@emotion/react";
+
+import ListPage from "./pages/ListPage";
 
 import "./index.css";
 
 const App = () => (
-  <div className="container">
-    <div>Name: ram-host</div>
-    <div>Framework: react</div>
-    <div>Language: TypeScript</div>
-    <div>CSS: Empty CSS</div>
-  </div>
+  <>
+    <Global
+      styles={css`
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+      `}
+    />
+    <ListPage />
+  </>
 );
 ReactDOM.render(<App />, document.getElementById("app"));

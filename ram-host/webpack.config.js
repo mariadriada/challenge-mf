@@ -44,7 +44,9 @@ module.exports = {
       name: "ram_host",
       filename: "remoteEntry.js",
       remotes: {},
-      exposes: {},
+      exposes: {
+        "./List": "./src/components/List/index.ts",
+      },
       shared: {
         ...deps,
         react: {
