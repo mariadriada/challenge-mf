@@ -43,7 +43,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "home",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        ramhost: "ram_host@http://localhost:4000/remoteEntry.js",
+      },
       exposes: {},
       shared: {
         ...deps,
