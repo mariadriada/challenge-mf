@@ -4,27 +4,9 @@ import { RouterProvider } from "react-router-dom";
 import { Global, css } from "@emotion/react";
 
 import { router } from "./router";
+import { initTranslate } from "./general/translate";
 
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
-
-i18n.use(initReactI18next).init({
-  resources: {
-    es: {
-      translation: {
-        "Show Rick And Morty characters":
-          "Mostrar personajes de Rick and Morty",
-        "Show Harry Potter Characters": "Mostrar personajes de Harry Potter",
-      },
-    },
-  },
-  lng: "en",
-  fallbackLng: "en",
-
-  interpolation: {
-    escapeValue: false,
-  },
-});
+initTranslate();
 
 const App = () => (
   <>

@@ -3,10 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 
 import { Button } from "../Button";
+import { Languaje } from "../Language";
 import { HeaderProps } from "../../types";
-import { ButtonContainerStyle } from "./styles";
+import { HeaderContainerStyle } from "./styles";
 
-const Header: FC<HeaderProps> = ({ primary = false, t, i18n }) => {
+const Header: FC<HeaderProps> = ({ primary = false, t }) => {
   const navigate = useNavigate();
 
   const showRickAndMorty = (
@@ -15,20 +16,20 @@ const Header: FC<HeaderProps> = ({ primary = false, t, i18n }) => {
     navigate("/rick-and-morty");
   };
 
-  const changeLanguaje = () => {
-    i18n.changeLanguage("es");
-  };
-
   return (
-    <ButtonContainerStyle primary={primary}>
-      <Button handleClick={changeLanguaje}>Cambiar a espanol</Button>
-      <Button handleClick={showRickAndMorty}>
-        {t("Show Rick And Morty characters")}
-      </Button>
-      <Button>{t("Show Harry Potter characters")}</Button>
-    </ButtonContainerStyle>
+    <HeaderContainerStyle primary={primary}>
+      <div className="header__languaje">
+        <Languaje />
+      </div>
+
+      <div className="header__buttons">
+        <Button handleClick={showRickAndMorty}>
+          {t("Show Rick And Morty characters")}
+        </Button>
+        <Button>{t("Show Harry Potter characters")}</Button>
+      </div>
+    </HeaderContainerStyle>
   );
 };
 
 export default withTranslation()(Header);
-//export default Header;
