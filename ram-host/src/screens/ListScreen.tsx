@@ -2,8 +2,9 @@ import React, { FC, useEffect, useState } from "react";
 
 import { List } from "../components/List/index";
 import { ItemProps } from "../types";
+import { SafeComponent } from "../components/SafeComponent";
 
-const ListPage: FC = () => {
+const ListScreen: FC = () => {
   const [data, setData] = useState<Array<ItemProps>>([]);
 
   const getAllCharacters = async () => {
@@ -16,7 +17,11 @@ const ListPage: FC = () => {
     getAllCharacters();
   }, []);
 
-  return <List list={data} />;
+  return (
+    <SafeComponent>
+      <List list={data} />
+    </SafeComponent>
+  );
 };
 
-export default ListPage;
+export default ListScreen;

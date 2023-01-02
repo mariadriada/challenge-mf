@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Global, css } from "@emotion/react";
 
-import ListPage from "./pages/ListPage";
-
+import { RickAndMortyList } from "./screens";
 import "./index.css";
 
 const App = () => (
@@ -17,7 +16,8 @@ const App = () => (
         }
       `}
     />
-    <ListPage />
+
+    <RickAndMortyList />
   </>
 );
 ReactDOM.render(<App />, document.getElementById("app"));
