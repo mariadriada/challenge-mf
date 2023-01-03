@@ -14,6 +14,7 @@ export const initTranslate = (
         Gender: "Género",
         Species: "Especie",
         Status: "Estado",
+        House: "Casa",
       },
     },
   }

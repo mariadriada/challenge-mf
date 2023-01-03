@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { withTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 import { Button } from "../Button";
 import { Languaje } from "../Language";
@@ -26,6 +27,9 @@ const Header: FC<HeaderProps> = ({ primary = false, t }) => {
     <HeaderContainerStyle primary={primary}>
       <div className="header__languaje">
         <Languaje />
+        <Link className="header__link" to="/">
+          Home
+        </Link>
       </div>
 
       <div className="header__buttons">

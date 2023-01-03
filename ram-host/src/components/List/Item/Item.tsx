@@ -33,7 +33,7 @@ const Item: FC<ItemProps> = ({
         )}
         {house && (
           <span>
-            <strong>{t("house")}:</strong> {house}
+            <strong>{t("House")}:</strong> {house}
           </span>
         )}
       </div>

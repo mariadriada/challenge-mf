@@ -12,6 +12,12 @@ export const HeaderContainerStyle = styled("div")(
 
   & .header__languaje {
     max-height: 3rem;
+
+    & .header__link {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+    }
   }
   
   & .header__buttons {
