@@ -5,7 +5,7 @@ export type ItemProps = {
   name: string;
   species: string;
   status: string;
-  url: string;
+  t?: Function;
 };
 
 export type ListProps = {

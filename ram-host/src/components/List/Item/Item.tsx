@@ -1,4 +1,5 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
+import { withTranslation } from "react-i18next";
 
 import { ItemProps } from "../../../types";
 import { ItemStyle } from "./styles";
@@ -10,7 +11,7 @@ const Item: FC<ItemProps> = ({
   name,
   species,
   status,
-  url,
+  t,
 }) => {
   return (
     <ItemStyle key={id}>
@@ -18,18 +19,18 @@ const Item: FC<ItemProps> = ({
       <div className="item__details">
         <h3>{name}</h3>
         <span>
-          <strong>Gender: </strong>
+          <strong>{t("Gender")}: </strong>
           {gender}
         </span>
         <span>
-          <strong>Species:</strong> {species}
+          <strong>{t("Species")}:</strong> {species}
         </span>
         <span>
-          <strong>Status:</strong> {status}
+          <strong>{t("Status")}:</strong> {status}
         </span>
       </div>
     </ItemStyle>
   );
 };
 
-export default Item;
+export default withTranslation()(Item);

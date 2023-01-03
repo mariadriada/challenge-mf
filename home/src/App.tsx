@@ -4,6 +4,7 @@ import { RouterProvider } from "react-router-dom";
 import { Global, css } from "@emotion/react";
 
 import { GlobalStoreProvider } from "store/store";
+import { RAMStoreProvider } from "ramhost/store";
 import { router } from "./router";
 import { initTranslate } from "./general/translate";
 
@@ -20,14 +21,12 @@ const App = () => (
         }
       `}
     />
-
-    <RouterProvider router={router}></RouterProvider>
+    <GlobalStoreProvider>
+      <RAMStoreProvider>
+        <RouterProvider router={router}></RouterProvider>
+      </RAMStoreProvider>
+    </GlobalStoreProvider>
   </>
 );
 
-ReactDOM.render(
-  <GlobalStoreProvider>
-    <App />
-  </GlobalStoreProvider>,
-  document.getElementById("app")
-);
+ReactDOM.render(<App />, document.getElementById("app"));

@@ -43,9 +43,13 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "ram_host",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        home: "home@http://localhost:3000/remoteEntry.js",
+        store: "store@http://localhost:5000/remoteEntry.js",
+      },
       exposes: {
         "./ListScreen": "./src/screens/index.ts",
+        "./store": "./src/redux-toolkit/store",
       },
       shared: {
         ...deps,

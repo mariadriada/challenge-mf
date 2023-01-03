@@ -11,6 +11,9 @@ export const initTranslate = (
         "Select languaje:": "Seleccioner idioma",
         Spanish: "Español",
         English: "Inglés",
+        Gender: "Género",
+        Species: "Especie",
+        Status: "Estado",
       },
     },
   }
