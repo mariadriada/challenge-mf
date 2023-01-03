@@ -1,13 +1,19 @@
-import React, { FC } from "react";
+import React, { FC, Suspense, lazy } from "react";
 
-import { HarryPotterList } from "hphost/ListScreen";
+const HarryPotterList = lazy(() =>
+  import("hphost/ListScreen").then(({ HarryPotterList }) => ({
+    default: HarryPotterList,
+  }))
+);
 import { Header } from "../components/Header";
 
 const HarryPotterScreen: FC = () => {
   return (
     <div>
       <Header />
-      <HarryPotterList />
+      <Suspense fallback={<div>Loading</div>}>
+        <HarryPotterList />
+      </Suspense>
     </div>
   );
 };
