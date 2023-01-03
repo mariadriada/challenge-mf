@@ -16,6 +16,12 @@ const Header: FC<HeaderProps> = ({ primary = false, t }) => {
     navigate("/rick-and-morty");
   };
 
+  const showHarryPotter = (
+    ev: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    navigate("/harry-potter");
+  };
+
   return (
     <HeaderContainerStyle primary={primary}>
       <div className="header__languaje">
@@ -26,7 +32,9 @@ const Header: FC<HeaderProps> = ({ primary = false, t }) => {
         <Button handleClick={showRickAndMorty}>
           {t("Show Rick And Morty characters")}
         </Button>
-        <Button>{t("Show Harry Potter characters")}</Button>
+        <Button handleClick={showHarryPotter}>
+          {t("Show Harry Potter characters")}
+        </Button>
       </div>
     </HeaderContainerStyle>
   );

@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 export const LanguajeStyle = styled("div")(
   css(`
   align-items: center;
+  background-color: #df78ef;
   display: flex;
   justify-content: center;
   padding: 1rem;

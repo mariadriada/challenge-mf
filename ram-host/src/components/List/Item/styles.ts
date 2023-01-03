@@ -24,6 +24,7 @@ export const ItemStyle = styled("div")(
     display: flex;
     flex-direction: column;
     font-size: 1rem;
+    height: 100%;
     justify-content: center;
     margin-left: .5rem;
     width: 75%;
@@ -31,6 +32,8 @@ export const ItemStyle = styled("div")(
     & h3 {
       color: #790e8b;
       margin-bottom: .5em;
+      margin: 0;
+      padding: 0;
     }
 
     & span{

@@ -50,6 +50,9 @@ module.exports = {
       exposes: {
         "./ListScreen": "./src/screens/index.ts",
         "./store": "./src/redux-toolkit/store",
+        "./api": "./src/api/fetch.ts",
+        "./List": "./src/components/List",
+        "./SafeComponent": "./src/components/SafeComponent",
       },
       shared: {
         ...deps,

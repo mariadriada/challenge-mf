@@ -11,11 +11,12 @@ const Item: FC<ItemProps> = ({
   name,
   species,
   status,
+  house,
   t,
 }) => {
   return (
     <ItemStyle key={id}>
-      <img className="item__image" src={image} />
+      <img className="item__image" src={image} alt="No image founded!" />
       <div className="item__details">
         <h3>{name}</h3>
         <span>
@@ -25,9 +26,16 @@ const Item: FC<ItemProps> = ({
         <span>
           <strong>{t("Species")}:</strong> {species}
         </span>
-        <span>
-          <strong>{t("Status")}:</strong> {status}
-        </span>
+        {status && (
+          <span>
+            <strong>{t("Status")}:</strong> {status}
+          </span>
+        )}
+        {house && (
+          <span>
+            <strong>{t("house")}:</strong> {house}
+          </span>
+        )}
       </div>
     </ItemStyle>
   );

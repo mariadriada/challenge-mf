@@ -5,6 +5,7 @@ import { Global, css } from "@emotion/react";
 
 import { GlobalStoreProvider } from "store/store";
 import { RAMStoreProvider } from "ramhost/store";
+import { HPStoreProvider } from "hphost/store";
 import { router } from "./router";
 import { initTranslate } from "./general/translate";
 
@@ -23,7 +24,9 @@ const App = () => (
     />
     <GlobalStoreProvider>
       <RAMStoreProvider>
-        <RouterProvider router={router}></RouterProvider>
+        <HPStoreProvider>
+          <RouterProvider router={router}></RouterProvider>
+        </HPStoreProvider>
       </RAMStoreProvider>
     </GlobalStoreProvider>
   </>

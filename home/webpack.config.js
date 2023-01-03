@@ -46,6 +46,7 @@ module.exports = {
       remotes: {
         ramhost: "ram_host@http://localhost:4000/remoteEntry.js",
         store: "store@http://localhost:5000/remoteEntry.js",
+        hphost: "hp_host@http://localhost:8080/remoteEntry.js",
       },
       exposes: {
         "./Translate": "./src/general/translate.ts",

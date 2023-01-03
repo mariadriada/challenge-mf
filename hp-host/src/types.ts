@@ -1,11 +1,10 @@
 export type ItemProps = {
   gender: string;
-  id: number;
-  image: string;
   name: string;
   species: string;
-  status?: string;
-  house?: string;
+  status: string;
+  image: string;
+  house: string;
   t?: Function;
 };
 

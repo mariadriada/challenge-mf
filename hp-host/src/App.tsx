@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import { HPStoreProvider } from "./redux-toolkit/store";
+import { HarryPotterList } from "./screens";
+
 import "./index.css";
 
 const App = () => (
-  <div className="container">
-    <div>Name: hp-host</div>
-    <div>Framework: react</div>
-    <div>Language: TypeScript</div>
-    <div>CSS: Empty CSS</div>
-  </div>
+  <HPStoreProvider>
+    <HarryPotterList />
+  </HPStoreProvider>
 );
 ReactDOM.render(<App />, document.getElementById("app"));
