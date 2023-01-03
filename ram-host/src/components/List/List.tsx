@@ -5,7 +5,7 @@ import { Item } from "./Item";
 import { ListProps } from "../../types";
 import { ListStyle } from "./styles";
 
-const List: FC<ListProps> = ({ list, configItems }: ListProps) => {
+const List: FC<ListProps> = ({ list }: ListProps) => {
   /* const { activeLanguage } = useGlobalStore();
 
   useEffect(() => {
