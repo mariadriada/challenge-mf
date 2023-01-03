@@ -20,12 +20,51 @@ const initialState: RAMCharacterState = {
   loading: false,
 };
 
+/*TODO: translate data to change language
+export const translateData = createAsyncThunk(
+  "RAMCharacter/translate",
+  async (data) => {
+    const newData = [];
+
+    data.forEach(async (item) => {
+      const items = Object.keys(item);
+      console.log(items);
+
+      items.forEach(async (key) => {
+        console.log(key, item[key]);
+        if (key !== "image") {
+          const res = await fetch("https://libretranslate.de/translate", {
+            method: "POST",
+            body: JSON.stringify({
+              q: "Hello",
+              source: "en",
+              target: "es",
+              format: "text",
+              api_key: "",
+            }),
+            headers: { "Content-Type": "application/json" },
+          });
+          console.log(await res.json());
+        }
+      });
+    });
+  }
+);
+*/
+
 export const getAllCharacters = createAsyncThunk(
   "RAMCharacter/all",
-  async () => {
+  async (_, { dispatch }) => {
     const request = new ApiFetch(RAM_API_URL, "/character");
     const response = await request.getAll();
-    return response.results;
+    const { results } = response || [];
+    const newResult = results.map(
+      ({ id, name, status, species, gender, image }: ItemProps) => {
+        return { id, name, status, species, gender, image };
+      }
+    );
+    //dispatch(translateData(newResult));
+    return newResult;
   }
 );
 
@@ -39,6 +78,7 @@ export const RAMCharacterSlice = createSlice({
     });
     builder.addCase(getAllCharacters.fulfilled, (state, { payload }) => {
       state.currentCharacters = payload;
+      state.charactersEnglish = payload;
     });
   },
 });
